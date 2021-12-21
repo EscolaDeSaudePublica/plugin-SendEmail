@@ -1,0 +1,32 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{opportunity_css}}">
+    <title>Publicação de Resultado</title>
+    <style>
+        p{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div font face="tahoma, sans-serif" color="#666666">
+        <img src="{{opportunity_logo_saude}}" alt="Logo Saúde E-mail"><br>
+        <h1>Se liga! O resultado de uma oportunidade foi divulgado.</h1><br>
+        <p class="teste"> 
+            O Mapa da Saúde informa que o resultado da oportunidade <b>{{opportunity_name}}</b>, 
+            vinculada ao projeto <b>{{project_name}}</b>, foi divulgado hoje. Que tal saber como você foi?<br><br> 
+            O seu resultado é <b>{{status_final}}</b><br><br>
+        </p>
+        Para saber mais detalhes ou entender melhor o seu resultado basta acessar o link para sua página de acopanhamento:
+    </div>
+    <div>
+        <font face="tahoma, sans-serif" color="#444444">
+            <a href="{{opportunity_tracking_page}}" target="_blank">{{opportunity_tracking_page}}</a><br><br>
+        </font>
+        <img src="{{opportunity_rodape}}" alt="Rodapé E-mail">
+    </div>
+</body>
+</html>

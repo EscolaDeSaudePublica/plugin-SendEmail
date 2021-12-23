@@ -18,6 +18,7 @@ class Controller extends \MapasCulturais\Controllers\Registration
 {
 
     public function GET_sendEmailResult(){
+    
         
         //Método que verifica se a pessoa está logada
         $this->requireAuthentication();
@@ -81,6 +82,10 @@ class Controller extends \MapasCulturais\Controllers\Registration
             $app->log->debug("E-mail enviado para inscrição {$registration->id}");
             $app->em->clear();
         }
+        $opportunity = $app->repo("Opportunity")->find(['id'=>$request['opportunity_id']]);
+        //Configurando o atributo "sent_emails_results" para receber 1. O valor será salvo na tabela "opportunity_meta", coluna "value"
+        $opportunity->sent_emails_results = 1;
+        $opportunity->save(true);
         $app->redirect($redirect_url);
     }
 

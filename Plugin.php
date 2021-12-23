@@ -33,7 +33,14 @@ class Plugin extends \MapasCulturais\Plugin
         $app = App::i();
         
 
-        $app->registerController('sendemail', 'SendEmail\Controller');    
+        $app->registerController('sendemail', 'SendEmail\Controller');
+
+        //Criando uma key chamada "sent_emails_results" para ser registrada na tabela "opportunity_meta", coluna "key"
+        $this->registerMetadata('MapasCulturais\Entities\Opportunity', 'sent_emails_results', [
+            'label' =>'Envio para os e-mails do resultado',
+            'type' => 'boolean'
+        ]);
+       
     }
 
     public function registerAssets(){
